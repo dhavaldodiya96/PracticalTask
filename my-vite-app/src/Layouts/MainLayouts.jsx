@@ -15,11 +15,9 @@ const MainLayouts = () => {
 
   return (
     <div className="layout-container">
-      {/* Header/Navbar */}
       <Header />
 
-      <div className="layout-content">
-        {/* Sidebar */}
+      <div className="layout-content" style={{ display: "flex" }}>
         <div className={`sidebar ${isSidebarOpen ? "open" : "closed"}`}>
           <button className="sidebar-toggle" onClick={toggleSidebar}>
             {isSidebarOpen ? (
@@ -32,11 +30,7 @@ const MainLayouts = () => {
         </div>
 
         {/* Main Content */}
-        <div
-          className={`main-content ${
-            isSidebarOpen ? "with-sidebar" : "no-sidebar"
-          }`}
-        >
+        <div style={{ width: "100%" }}>
           <Outlet /> {/* Render child pages */}
         </div>
       </div>
