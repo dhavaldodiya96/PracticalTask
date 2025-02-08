@@ -1,8 +1,12 @@
+import { FaRegUserCircle } from "react-icons/fa";
+import "../style/sideBar.css";
+
 const Header = () => {
   return (
-    <header>
-      <h1>My App</h1>
-    </header>
+    <div className="navbar-header">
+      <h1 className="navbar-logo">Logo</h1>
+      <FaRegUserCircle className="navbar-icon" />
+    </div>
   );
 };
 
