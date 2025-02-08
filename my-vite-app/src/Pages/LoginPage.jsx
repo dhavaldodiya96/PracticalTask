@@ -1,13 +1,23 @@
+import { useNavigate } from "react-router-dom";
 import "../style/LoginPage.css";
 import { FaUser, FaLock } from "react-icons/fa";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Here you can add authentication logic, like API calls to validate the user
+    console.log("Login button clicked");
+    navigate("/"); // Navigate to the dashboard
+  };
+
   return (
     <div className="login-Main-container">
       <div className="login-container">
         <div className="login-sub-container">
           <p className="login-text">Login</p>
-          <form className="form-container">
+          <form className="form-container" onSubmit={handleLogin}>
             <div className="user-name-container">
               <FaUser className="icon userIcon" style={{ color: "#FFFFFF" }} />
               <input
